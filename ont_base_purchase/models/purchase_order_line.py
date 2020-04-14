@@ -4,10 +4,17 @@ _logger = logging.getLogger(__name__)
 
 from openerp import api, models, fields
 from openerp.exceptions import Warning
+import odoo.addons.decimal_precision as dp
 
 class PurchaseOrderLine(models.Model):
     _inherit = 'purchase.order.line'
-        
+    
+    price_unit = fields.Float(
+        string='Unit Price',
+        required=True,
+        digits=dp.get_precision('Price Unit')
+    )
+            
     @api.onchange('product_id')
     def onchange_product_id_override(self):
         if self.product_id.id>0:

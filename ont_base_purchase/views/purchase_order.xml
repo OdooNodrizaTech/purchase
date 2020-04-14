@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo> 
+<odoo>    
+    <record id="ont_base_purchase_view_purchase_order_filter" model="ir.ui.view">
+        <field name="name">ont_base_purchase_view_purchase_order_filter</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.view_purchase_order_filter" />
+        <field name="priority" eval="20"/>                
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+                <field name="amount_total" string="Total"/>
+            </field>                                                            
+        </field>
+    </record> 
     <record id="ont_base_purchase_purchase_order_form" model="ir.ui.view">
         <field name="name">ont_base_purchase_purchase_order_form</field>
         <field name="model">purchase.order</field>
@@ -9,7 +20,10 @@
             <field name="payment_term_id" position="after">
                 <field name="payment_mode_id" domain="[('payment_type', '=', 'outbound')]" widget="selection"/>
                 <field name="user_id"/>
-            </field>                                                            
+            </field>
+            <xpath expr="//page/field[@name='order_line']/tree/field[@name='price_unit']" position="replace">
+                <field name="price_unit" widget="monetary" />
+            </xpath>                                                            
         </field>
     </record>    
     <record id="ont_base_purchase_purchase_order_tree" model="ir.ui.view">
