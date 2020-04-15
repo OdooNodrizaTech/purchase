@@ -20,10 +20,7 @@
             <field name="payment_term_id" position="after">
                 <field name="payment_mode_id" domain="[('payment_type', '=', 'outbound')]" widget="selection"/>
                 <field name="user_id"/>
-            </field>
-            <xpath expr="//page/field[@name='order_line']/tree/field[@name='price_unit']" position="replace">
-                <field name="price_unit" widget="monetary" />
-            </xpath>                                                            
+            </field>                                                                        
         </field>
     </record>    
     <record id="ont_base_purchase_purchase_order_tree" model="ir.ui.view">

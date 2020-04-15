@@ -8,12 +8,6 @@ import odoo.addons.decimal_precision as dp
 
 class PurchaseOrderLine(models.Model):
     _inherit = 'purchase.order.line'
-    
-    price_unit = fields.Float(
-        string='Unit Price',
-        required=True,
-        digits=dp.get_precision('Price Unit')
-    )
             
     @api.onchange('product_id')
     def onchange_product_id_override(self):
@@ -21,4 +15,4 @@ class PurchaseOrderLine(models.Model):
             if self.product_id.default_code!=False:
                 if self.product_id.default_code in self.name:
                     name_split = self.name.split(']')
-                    self.name = name_split[1]                                                                                                                                                                      
+                    self.name = name_split[1]
