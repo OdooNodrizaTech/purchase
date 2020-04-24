@@ -1,3 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-purchase_order_mail_followers_extra_admin,purchase_order_mail_followers_extra,model_purchase_order_mail_followers_extra,,1,1,1,1
-purchase_order_mail_followers_extra_group_user,purchase_order_mail_followers_extra_user,model_purchase_order_mail_followers_extra,base.group_user,1,1,1,1
