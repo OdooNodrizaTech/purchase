@@ -6,7 +6,7 @@
     'website': 'https://nodrizatech.com/',
     'category': 'Delivery',
     'license': 'AGPL-3',
-    'depends': ['base', 'purchase'],    
+    'depends': ['base', 'purchase'],
     'data': [
         'views/purchase_order.xml',
     ],

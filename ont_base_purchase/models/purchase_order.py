@@ -18,4 +18,4 @@ class PurchaseOrder(models.Model):
         string='Comercial',
         index=True,  
         default=lambda self: self.env.user
-    )                                                                                                                                                 
+    )
