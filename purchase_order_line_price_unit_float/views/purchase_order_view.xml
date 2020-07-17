@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>     
+<odoo>
+
     <record id="purchase_order_line_price_unit_float_purchase_order_form" model="ir.ui.view">
         <field name="name">purchase_order_line_price_unit_float_purchase_order_form</field>
         <field name="model">purchase.order</field>
@@ -10,5 +11,6 @@
                 <field name="price_unit" widget="monetary" />
             </xpath>                                                            
         </field>
-    </record>        
+    </record>
+    
 </odoo>

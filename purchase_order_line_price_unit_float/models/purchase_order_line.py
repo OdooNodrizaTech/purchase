@@ -1,10 +1,8 @@
-# -*- coding: utf-8 -*-
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
-import logging
-_logger = logging.getLogger(__name__)
 
-from odoo import api, models, fields
+from odoo import models, fields
 import odoo.addons.decimal_precision as dp
+
 
 class PurchaseOrderLine(models.Model):
     _inherit = 'purchase.order.line'
