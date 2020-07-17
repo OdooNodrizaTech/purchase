@@ -1,24 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+
     <record id="purchase_order_mail_followers_extra_action" model="ir.actions.act_window">
-        <field name="name">Seguidores extra compras</field>
+        <field name="name">Followers extra in purchases</field>
         <field name="res_model">purchase.order.mail.followers.extra</field>
         <field name="view_mode">tree,form</field>                
     </record>
+
     <record id="purchase_order_mail_followers_extra_action_tree" model="ir.ui.view">
-        <field name="name">Seguidores extra compras</field>
+        <field name="name">Followers extra in purchases</field>
         <field name="model">purchase.order.mail.followers.extra</field>
          <field name="arch" type="xml">
-            <tree string="Seguidores extra">
+            <tree string="Followers extra">
                 <field name="partner_id"/>                    
             </tree>
         </field>            
-    </record>          
+    </record>
+
     <menuitem 
         action="purchase_order_mail_followers_extra_action" 
-        name="Seguidores extra compras"
+        name="Followers extra in purchases"
         id="menuitem_purchase_order_mail_followers_extra" 
         parent="contacts.res_partner_menu_config"
         sequence="10"
-    />                
+    />
+    
 </odoo>
