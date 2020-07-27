@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/OdooNodrizaTech/purchase.svg?branch=12.0)](https://travis-ci.org/OdooNodrizaTech/purchase)
+[![Coverage Status](https://coveralls.io/repos/OdooNodrizaTech/OdooNodrizaTech/purchase/badge.svg?branch=12.0)](https://coveralls.io/r/OdooNodrizaTech/OdooNodrizaTech/OdooNodrizaTech/purchase?branch=12.0)
+
 purchase
 =========
 Módulos relacionados con Purchase
