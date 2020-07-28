@@ -3,13 +3,15 @@
 {
     "name": "Purchase Order Mail Followers Extra",
     "version": "12.0.1.0.0",
-    "author": "Odoo Nodriza Tech (ONT)",
+    "author": "Odoo Nodriza Tech (ONT), "
+              "Odoo Community Association (OCA)",
     "website": "https://nodrizatech.com/",
     "category": "Delivery",
     "license": "AGPL-3",
     "depends": [
         "base",
-        "purchase"
+        "purchase",
+        "contacts"
     ],
     "data": [
         "views/purchase_order_mail_followers_extra_view.xml",
