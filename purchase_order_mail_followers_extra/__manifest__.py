@@ -10,7 +10,8 @@
     "license": "AGPL-3",
     "depends": [
         "base",
-        "purchase"
+        "purchase",
+        "contacts"
     ],
     "data": [
         "views/purchase_order_mail_followers_extra_view.xml",
