@@ -39,7 +39,7 @@ class PurchaseOrder(models.Model):
             )
             for item in items:
                 for partner_id_extra in item.partner_ids_extra:
-                    if not partner_id_extra.id in mail_followers_partner_ids:   
+                    if partner_id_extra.id not in mail_followers_partner_ids:
                         vals = {
                             'partner_id': int(partner_id_extra.id),
                             'res_model': 'purchase.order',
