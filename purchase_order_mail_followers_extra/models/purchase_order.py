@@ -20,30 +20,30 @@ class PurchaseOrder(models.Model):
 
     @api.multi
     def action_mail_followers_override(self):
-        self.ensure_one()
-        if self.id > 0:
-            mail_followers_partner_ids = []
-            items = self.env['mail.followers'].search([
-                ('res_model', '=', 'purchase.order'),
-                ('res_id', '=', self.id),
-            ])
-            if items:
-                for item in items:
-                    if item.partner_id:
-                        mail_followers_partner_ids.append(item.partner_id.id)
-            # mail followers extra
-            items = self.env['purchase.order.mail.followers.extra'].search(
-                [
-                    ('partner_id', '=', self.partner_id.id)
-                ]
-            )
-            for item in items:
-                for partner_id_extra in item.partner_ids_extra:
-                    if partner_id_extra.id not in mail_followers_partner_ids:
-                        vals = {
-                            'partner_id': int(partner_id_extra.id),
-                            'res_model': 'purchase.order',
-                            'res_id': self.id,
-                            'subtype_ids': [(4, 1)],
-                        }
-                        self.env['mail.followers'].sudo().create(vals)
+        for item in self:
+            if item.id > 0:
+                partner_ids = []
+                followers_ids = self.env['mail.followers'].search([
+                    ('res_model', '=', 'purchase.order'),
+                    ('res_id', '=', item.id),
+                ])
+                if followers_ids:
+                    for followers_id in followers_ids:
+                        if followers_id.partner_id:
+                            partner_ids.append(followers_id.partner_id.id)
+                # mail followers extra
+                extra_ids = self.env['purchase.order.mail.followers.extra'].search(
+                    [
+                        ('partner_id', '=', item.partner_id.id)
+                    ]
+                )
+                for extra_id in extra_ids:
+                    for partner_id_extra in extra_id.partner_ids_extra:
+                        if partner_id_extra.id not in partner_ids:
+                            vals = {
+                                'partner_id': int(partner_id_extra.id),
+                                'res_model': 'purchase.order',
+                                'res_id': item.id,
+                                'subtype_ids': [(4, 1)],
+                            }
+                            self.env['mail.followers'].sudo().create(vals)
