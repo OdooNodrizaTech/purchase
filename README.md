@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/OdooNodrizaTech/purchase.svg?branch=12.0)](https://travis-ci.org/OdooNodrizaTech/purchase)
+[![Coverage Status](https://coveralls.io/repos/github/OdooNodrizaTech/purchase/badge.svg?branch=12.0)](https://coveralls.io/github/OdooNodrizaTech/purchase?branch=12.0)
 
 purchase
 =========
